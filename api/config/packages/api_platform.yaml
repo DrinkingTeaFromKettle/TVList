@@ -12,6 +12,9 @@ api_platform:
         jsonopenapi: ['application/vnd.openapi+json']
         html: ['text/html']
         json: ['application/json']
+    mapping:
+        paths:
+            - '%kernel.project_dir%/config/api_platform'
     # Good defaults for REST APIs
     defaults:
         stateless: true

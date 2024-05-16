@@ -41,13 +41,15 @@ services:
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
     environment:
-      - POSTGRES_DB=${POSTGRES_DB:-app}
+      - POSTGRES_DB=${POSTGRES_DB:-TVListDB}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-!ChangeMe!}
-      - POSTGRES_USER=${POSTGRES_USER:-app}
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
     volumes:
       - db_data:/var/lib/postgresql/data
       # bind-mounted host directory 
       # - ./api/docker/db/data:/var/lib/postgresql/data
+    ports:
+      - "54321:5432"
 volumes:
   caddy_data:
   caddy_config:

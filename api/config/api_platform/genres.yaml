@@ -1,0 +1,10 @@
+# api/config/api_platform/genres.yaml
+resources:
+    App\Entity\Genre:
+        shortName: 'Genre'                   # optional
+        description: 'Gatunek produkcji' # optional
+#        operations:
+#            ApiPlatform\Metadata\GetCollection: ~
+#            ApiPlatform\Metadata\Get: ~
+#        types: ['https://schema.org/Offer']   # optional
+#        paginationItemsPerPage: 25           # optional
