@@ -1,0 +1,12 @@
+# api/config/api_platform/studio.yaml
+resources:
+  App\Entity\Studio:
+    shortName: 'Studio'                   # optional
+    description: 'Studio produkcji' # optional
+    normalizationContext:
+      groups: [ 'studio' ]
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\Get: ~
+#        types: ['https://schema.org/Offer']   # optional
+#        paginationItemsPerPage: 25           # optional

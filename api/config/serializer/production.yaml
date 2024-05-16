@@ -1,0 +1,19 @@
+# api/config/serializer/studio.yaml
+App\Entity\Production:
+  attributes:
+    id:
+      groups: ['studio','production', 'genre']
+    title:
+      groups: ['studio', 'production', 'genre']
+    description:
+      groups: [ 'production']
+    studio:
+      groups: [ 'production']
+    episodes:
+      groups: [ 'production']
+    currentEpisodes:
+      groups: [ 'production']
+    trailerLink:
+      groups: [ 'production']
+    genre:
+      groups: ['production']

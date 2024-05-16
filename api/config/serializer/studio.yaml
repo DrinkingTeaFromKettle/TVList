@@ -1,0 +1,9 @@
+# api/config/api_platform/studio.yaml
+App\Entity\Studio:
+  attributes:
+    id:
+      groups: ['studio', 'production']
+    name:
+      groups: ['studio', 'production']
+    productions:
+      groups: ['studio']

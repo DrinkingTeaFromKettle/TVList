@@ -1,0 +1,12 @@
+# api/config/api_platform/productions.yaml
+resources:
+  App\Entity\Production:
+    shortName: 'Production'                   # optional
+    description: 'Film/Serial' # optional
+    normalizationContext:
+      groups: [ 'production' ]
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\Get: ~
+#        types: ['https://schema.org/Offer']   # optional
+#        paginationItemsPerPage: 25           # optional

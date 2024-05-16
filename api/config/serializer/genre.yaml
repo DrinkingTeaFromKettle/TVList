@@ -1,0 +1,9 @@
+# api/config/serializer/genre.yaml
+App\Entity\Genre:
+  attributes:
+    id:
+      groups: ['production','genre']
+    name:
+      groups: ['production','genre']
+    productions:
+      groups: ['genre']
