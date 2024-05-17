@@ -2,18 +2,18 @@
 App\Entity\Production:
   attributes:
     id:
-      groups: ['studio','production', 'genre']
+      groups: ['studioGet','productionGet', 'genre']
     title:
-      groups: ['studio', 'production', 'genre']
+      groups: ['studioGet', 'productionWrite', 'genre', 'productionGet']
     description:
-      groups: [ 'production']
+      groups: ['productionGet', 'productionWrite']
     studio:
-      groups: [ 'production']
+      groups: [ 'productionGet', 'productionWrite']
     episodes:
-      groups: [ 'production']
+      groups: [ 'productionGet', 'productionWrite']
     currentEpisodes:
-      groups: [ 'production']
+      groups: [ 'productionGet', 'productionWrite']
     trailerLink:
-      groups: [ 'production']
-    genre:
-      groups: ['production']
+      groups: [ 'productionGet', 'productionWrite']
+    genres:
+      groups: ['productionGet', 'productionWrite']

@@ -2,8 +2,8 @@
 App\Entity\Genre:
   attributes:
     id:
-      groups: ['production','genre']
+      groups: ['productionGet','genreCollection','genre']
     name:
-      groups: ['production','genre']
+      groups: ['productionGet','genreCollection','genre']
     productions:
       groups: ['genre']
