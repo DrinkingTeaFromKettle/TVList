@@ -11,10 +11,12 @@ class Genre
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]
     private ?int $id = null;
+
     #[ORM\Column]
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^[\p{Uppercase}]/', message: "Studio name has to start with an uppercase letter.")]
     public string $name = '';
+
     #[Orm\ManyToMany(targetEntity: Production::class, mappedBy: 'genres')]
     #[Assert\Valid]
     public Collection $productions;

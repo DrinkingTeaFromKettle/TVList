@@ -1,0 +1,16 @@
+# api/config/api_platform/users.yaml
+resources:
+  App\Entity\User:
+    shortName: 'User'
+    description: 'Użytkownik'
+    normalizationContext:
+      groups: ['user']
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\Get: ~
+      ApiPlatform\Metadata\Post:
+        denormalizationContext:
+          groups: [ 'userCreate' ]
+        processor: App\State\UserStateProcessor
+      ApiPlatform\Metadata\Patch: ~
+      ApiPlatform\Metadata\Delete: ~

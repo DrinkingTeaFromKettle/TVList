@@ -1,0 +1,15 @@
+# api/config/serializer/user.yaml
+App\Entity\User:
+  attributes:
+    id:
+      groups: ['user']
+    username:
+      groups: ['user', 'userCreate']
+    plainPassword:
+      groups: ['userCreate']
+    email:
+      groups: ['user', 'userCreate']
+    createdAt:
+      groups: ['user']
+    roles:
+      groups: ['user', 'userCreate']
