@@ -44,6 +44,14 @@ security:
         - { path: ^/productions, roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
 
+#    hwi_oauth.user.provider.entity:
+#        class: HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
+#        arguments:
+#            $class: App\Entity\User
+#            $properties:
+#                'google': 'google'
+#                'my_custom_provider': 'myCustomProvider'
+
 when@test:
     security:
         password_hashers:
