@@ -9,6 +9,7 @@ security:
             entity:
                 class: 'App\Entity\User'
                 property: 'username'
+    enable_authenticator_manager: true
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -23,17 +24,18 @@ security:
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
             jwt: ~
+            oauth:
+                resource_owners:
+                    twitter: "/auth/check-x"
+                    google: "/auth/check-google"
+                login_path: /auth
+                use_forward: false
+                failure_path: /login
+
+                oauth_user_provider:
+                    service: my.oauth_aware.user_provider.service
 
 
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#the-firewall
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/$, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
         - { path: ^/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI docs
@@ -43,6 +45,14 @@ security:
         - { path: ^/studios, roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: ^/productions, roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
+
+#    hwi_oauth.user.provider.entity:
+#        class: HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
+#        arguments:
+#            $class: App\Entity\User
+#            $properties:
+#                'google': 'google'
+#                'my_custom_provider': 'myCustomProvider'
 
 when@test:
     security:

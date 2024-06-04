@@ -10,3 +10,9 @@ when@prod:
     framework:
         router:
             strict_requirements: null
+
+twitter_login:
+    path: /auth/check-twitter
+
+google_login:
+    path: /auth/check-google
