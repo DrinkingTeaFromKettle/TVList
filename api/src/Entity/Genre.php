@@ -15,21 +15,16 @@ class Genre
     #[ORM\Column]
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^[\p{Uppercase}]/', message: "Studio name has to start with an uppercase letter.")]
-    public string $name = '';
+    private string $name = '';
 
     #[Orm\ManyToMany(targetEntity: Production::class, mappedBy: 'genres')]
     #[Assert\Valid]
-    public Collection $productions;
+    private Collection $productions;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
-//    public function getName(): string
-//    {
-//        return $this->name;
-//    }
 
     public function __construct()
     {
@@ -45,4 +40,19 @@ class Genre
         $this -> productions->removeElement($production);
         return $this;
     }
+
+    public function getProductions(): Collection{
+        return $this -> productions;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self{
+        $this->name = $name;
+        return $this;
+    }
+
 }

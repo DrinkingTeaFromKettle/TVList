@@ -1,7 +1,9 @@
 # api/config/serializer/user.yaml
 App\Entity\User:
   attributes:
-    id:
+#    id:
+#      groups: ['user']
+    uuid:
       groups: ['user']
     username:
       groups: ['user', 'userCreate']
@@ -12,4 +14,6 @@ App\Entity\User:
     createdAt:
       groups: ['user']
     roles:
-      groups: ['user', 'userCreate']
+      groups: ['user', 'setRole']
+    productions:
+      groups: ['user']

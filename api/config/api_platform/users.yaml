@@ -6,7 +6,8 @@ resources:
     normalizationContext:
       groups: ['user']
     operations:
-      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\GetCollection:
+        uriTemplate: /allUsers
       ApiPlatform\Metadata\Get: ~
       ApiPlatform\Metadata\Post:
         denormalizationContext:
@@ -14,3 +15,8 @@ resources:
         processor: App\State\UserStateProcessor
       ApiPlatform\Metadata\Patch: ~
       ApiPlatform\Metadata\Delete: ~
+      set_role:
+        uriTemplate: /setRole/{id}
+        class: ApiPlatform\Metadata\Patch
+        method: [PATCH]
+        groups: ['setRole']

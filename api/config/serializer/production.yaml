@@ -1,8 +1,10 @@
 # api/config/serializer/studio.yaml
 App\Entity\Production:
   attributes:
-    id:
-      groups: ['studioGet','productionGet', 'genre']
+#    id:
+#      groups: ['studioGet','productionGet', 'genre']
+    uuid:
+      groups: ['productionGet']
     title:
       groups: ['studioGet', 'productionWrite', 'genre', 'productionGet']
     description:
@@ -17,3 +19,7 @@ App\Entity\Production:
       groups: [ 'productionGet', 'productionWrite']
     genres:
       groups: ['productionGet', 'productionWrite']
+    createdBy:
+      groups: ['productionGet']
+    created:
+      groups: ['productionGet']

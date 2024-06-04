@@ -1,8 +1,8 @@
 # api/config/serializer/genre.yaml
 App\Entity\Genre:
   attributes:
-    id:
-      groups: ['productionGet','genreCollection','genre']
+#    id:
+#      groups: ['productionGet','genreCollection','genre']
     name:
       groups: ['productionGet','genreCollection','genre']
     productions:

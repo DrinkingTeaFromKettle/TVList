@@ -117,6 +117,11 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zozlak/rdf-constants" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/lcobucci/clock" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/lexik/jwt-authentication-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/behat/transliterator" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/gedmo/doctrine-extensions" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
