@@ -14,7 +14,7 @@ class Genre
 
     #[ORM\Column]
     #[Assert\NotBlank]
-    #[Assert\Regex(pattern: '/^[\p{Uppercase}]/', message: "Studio name has to start with an uppercase letter.")]
+    #[Assert\Regex(pattern: '/^[\p{Uppercase}]/', message: "Genre name has to start with an uppercase letter.")]
     private string $name = '';
 
     #[Orm\ManyToMany(targetEntity: Production::class, mappedBy: 'genres')]

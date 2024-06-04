@@ -8,6 +8,11 @@ resources:
             ApiPlatform\Metadata\GetCollection: ~
             ApiPlatform\Metadata\Get:
                 normalizationContext:
-                    groups: [ 'genre' ]
+                    groups: [ 'genreGet' ]
+            ApiPlatform\Metadata\Post:
+                denormalizationContext:
+                    groups: [ 'genreCreate' ]
+            ApiPlatform\Metadata\Patch: ~
+            ApiPlatform\Metadata\Delete: ~
 
 
