@@ -1,4 +1,3 @@
-# api/config/serializer/studio.yaml
 App\Entity\Production:
   attributes:
 #    id:

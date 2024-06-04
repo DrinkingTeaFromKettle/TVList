@@ -1,4 +1,3 @@
-# api/config/serializer/genre.yaml
 App\Entity\Genre:
   attributes:
 #    id:

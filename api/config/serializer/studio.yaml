@@ -1,11 +1,10 @@
-# api/config/serializer/studio.yaml
 App\Entity\Studio:
   attributes:
 #    id:
 #      groups: ['studioGet', 'productionGet', 'studioCollection' ]
     uuid:
-      groups: ['studioGet', 'studioCollection']
+      groups: ['studioGet', 'studioCollection', 'productionGet', 'studioCreate']
     name:
-      groups: ['studioGet', 'productionGet', 'studioWrite', 'productionWrite', 'studioCollection' ]
+      groups: ['studioGet', 'productionGet', 'studioCreate', 'productionWrite', 'studioCollection' ]
     productions:
       groups: ['studioGet']

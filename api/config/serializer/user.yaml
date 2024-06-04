@@ -1,4 +1,3 @@
-# api/config/serializer/user.yaml
 App\Entity\User:
   attributes:
 #    id:
