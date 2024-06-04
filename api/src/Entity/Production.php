@@ -56,6 +56,9 @@ class Production
     #[Assert\Url]
     private ?string $trailerLink = '';
 
+//    #[ORM\Column(type:"datetime", nullable: true)]
+//    private ?DateTime $producedAt = null;
+
 //    #[ORM\Column(type: 'float')]
 //    public int $avaregeScore = 0;
 

@@ -27,3 +27,58 @@ services:
         tags: [ kernel.event_listener ]
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    users.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { username: 'partial', email: 'partial' } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    users.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            $properties: { username: ~ }
+            $orderParameterName: order
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    studios.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { name: 'partial' } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    studios.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            $properties: { name: ~ }
+            $orderParameterName: order
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    productions.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { title: 'partial', description: 'partial' } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    productions.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments:
+            $properties: { title: ~ , }
+            $orderParameterName: order
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+    productions.range_filter:
+        parent: 'api_platform.doctrine.orm.range_filter'
+        arguments: [ { episodes: ~ } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
