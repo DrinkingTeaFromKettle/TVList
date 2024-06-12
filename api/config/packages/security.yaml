@@ -26,14 +26,13 @@ security:
             jwt: ~
             oauth:
                 resource_owners:
-                    twitter: "/auth/check-x"
-                    google: "/auth/check-google"
+                    google: "/login/check-google"
+                    twitter: "/login/check-x"
                 login_path: /auth
-                use_forward: false
-                failure_path: /login
+#                use_forward: false
 
                 oauth_user_provider:
-                    service: my.oauth_aware.user_provider.service
+                    service: hwi_oauth.user.provider.entity
 
 
     access_control:
@@ -45,14 +44,6 @@ security:
         - { path: ^/studios, roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: ^/productions, roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
-
-#    hwi_oauth.user.provider.entity:
-#        class: HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
-#        arguments:
-#            $class: App\Entity\User
-#            $properties:
-#                'google': 'google'
-#                'my_custom_provider': 'myCustomProvider'
 
 when@test:
     security:

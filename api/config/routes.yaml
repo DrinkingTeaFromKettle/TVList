@@ -7,3 +7,6 @@ controllers:
 auth:
     path: /auth
     methods: ['POST']
+
+google_login:
+    path: /login/check-google
